@@ -5,17 +5,17 @@ CREATE TABLE Provincia (
 );
 
 CREATE TABLE Persona (
-    id_persona SERIAL PRIMARY KEY,
     nombre VARCHAR(100) NOT NULL,
 	apellido VARCHAR(100) NOT NULL,
 	segundo_nombre VARCHAR(100),
 	segundo_apellido VARCHAR(100),
 	tipo_documento VARCHAR(10) NOT NULL,
-	numero_documento VARCHAR(20) UNIQUE,
+	numero_documento VARCHAR(20) UNIQUE NOT NULL,
 	sexo CHAR(1) CHECK (sexo IN ('M', 'F', 'X')),
 	fecha_nacimiento DATE,
 	id_provincia INT NOT NULL REFERENCES Provincia(id_prov),
-    cobertura_medica VARCHAR(5) CHECK (cobertura_medica IN ('CPE', 'Mixta')) 
+    cobertura_medica VARCHAR(5) CHECK (cobertura_medica IN ('CPE', 'Mixta')),
+	PRIMARY KEY (numero_documento, tipo_documento)
 );
 
 CREATE TABLE EfectorDeSalud (
