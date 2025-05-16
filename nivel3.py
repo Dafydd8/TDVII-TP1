@@ -13,20 +13,21 @@
 # f.close()
 import random
 import csv
-f = open('efectores.csv', 'r', encoding='utf-8')
+f = open('hce.csv', 'r', encoding='utf-8')
 out = open('script.txt', 'w', encoding='utf-8')
 for linea in csv.DictReader(f):
-    valor = random.choices([1, 0], weights=[0.6, 0.4])[0]
-    refes = linea['cod_refes']
+    valor = random.choices([1, 0], weights=[0.7, 0.3])[0]
+    id = linea['id_hce']
+    "nombre","id_prov","tipo_gestion","tipo_desarrollo","gestion_estudios","generacion_receta_digital"
     nombre = linea['nombre']
     id_prov = linea['id_prov']
-    nivel = linea['nivel'].replace('\"', '')
+    genera = linea['generacion_receta_digital'].replace('\"', '')
     if valor == 1:
-        tipo = '\'Alta Tecnología\''
+        tipo = '\'Públicas\''
     else:
-        tipo = '\'Instituto Especializado\''
-    if nivel == 'Tercer Nivel':
-        comando = f'INSERT INTO EfectorTercerNivel (cod_refes, tipo) VALUES ({refes},{tipo});\n'
+        tipo = '\'Todas\''
+    if genera == 'Genera':
+        comando = f'INSERT INTO HCEGeneraReceta (id_HCE, farmacias_asociadas) VALUES ({id},{tipo});\n'
         out.write(comando)
 f.close()
 out.close()

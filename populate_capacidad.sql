@@ -1,0 +1,15 @@
+INSERT INTO Capacidad (nombre, descripcion) VALUES ('Generación de Recetas Electrónicas', 'Permite emitir recetas digitales directamente desde la HCE.');
+INSERT INTO Capacidad (nombre, descripcion) VALUES ('Generación de Prescripciones', 'Permite generar prescripciones de tratamientos o medicamentos.');
+INSERT INTO Capacidad (nombre, descripcion) VALUES ('Portal del Paciente Vinculado', 'Ofrece acceso al paciente a través de un portal online.');
+INSERT INTO Capacidad (nombre, descripcion) VALUES ('Uso de Terminología SNOMED CT', 'Utiliza la codificación estandarizada SNOMED CT.');
+INSERT INTO Capacidad (nombre, descripcion) VALUES ('Interoperabilidad con Farmacias', 'Las recetas digitales pueden ser utilizadas en farmacias.');
+INSERT INTO Capacidad (nombre, descripcion) VALUES ('Firma Digital Integrada', 'Permite firmar digitalmente documentos médicos.');
+INSERT INTO Capacidad (nombre, descripcion) VALUES ('Interoperabilidad con Prepagas', 'La HCE se conecta con sistemas de medicina prepaga.');
+INSERT INTO Capacidad (nombre, descripcion) VALUES ('Interoperabilidad con Obras Sociales', 'Conecta con obras sociales para validación de cobertura.');
+INSERT INTO Capacidad (nombre, descripcion) VALUES ('Consulta de Antecedentes Médicos', 'Permite revisar antecedentes clínicos del paciente.');
+INSERT INTO Capacidad (nombre, descripcion) VALUES ('Integración con Laboratorios', 'Conecta con laboratorios para ver resultados automáticamente.');
+INSERT INTO Capacidad (nombre, descripcion) VALUES ('Acceso Multidispositivo (Web/Móvil)', 'La HCE está disponible tanto en computadoras como en móviles.');
+INSERT INTO Capacidad (nombre, descripcion) VALUES ('Registro de Vacunación', 'Permite registrar y consultar vacunas aplicadas.');
+INSERT INTO Capacidad (nombre, descripcion) VALUES ('Gestión de Turnos', 'Permite solicitar y administrar turnos médicos.');
+INSERT INTO Capacidad (nombre, descripcion) VALUES ('Interfaz Profesional', 'Dispone de una interfaz específica para profesionales de salud.');
+INSERT INTO Capacidad (nombre, descripcion) VALUES ('Visualización de Imágenes Médicas', 'Permite ver radiografías, resonancias y otros estudios desde la HCE.');
