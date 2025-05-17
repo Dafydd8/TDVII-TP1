@@ -58,12 +58,12 @@ CREATE TABLE HCEGeneraReceta (
 	FOREIGN KEY (id_HCE) REFERENCES HCE(id_HCE)
 );
 
-CREATE TABLE HCEPrepagas (
+CREATE TABLE HCEGeneraPrepagas (
 	id_HCE int PRIMARY KEY,
 	FOREIGN KEY (id_HCE) REFERENCES HCEGeneraReceta(id_HCE)
 );
 
-CREATE TABLE HCEObrasSociales (
+CREATE TABLE HCEGeneraObrasSociales (
 	id_HCE int PRIMARY KEY,
 	FOREIGN KEY (id_HCE) REFERENCES HCEGeneraReceta(id_HCE)
 );
@@ -78,6 +78,24 @@ CREATE TABLE HCECapacidad (
 	id_HCE INT REFERENCES HCE(id_HCE),
     cod_capacidad INT REFERENCES Capacidad(cod_capacidad),
     PRIMARY KEY (id_HCE, cod_capacidad)
+);
+
+CREATE TABLE DocumentoDigital (
+    id_documento SERIAL PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL,
+    tipo VARCHAR(50) CHECK (tipo IN ('Estudio de Laboratorio', 'Práctica Médica'))
+);
+
+CREATE TABLE FormaEnvio (
+    id_forma_envio SERIAL PRIMARY KEY,
+    nombre VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE AccedeDocumento (
+    id_HCE INT REFERENCES HCE(id_HCE),
+    id_documento INT REFERENCES DocumentoDigital(id_documento),
+    id_forma_envio INT REFERENCES FormaEnvio(id_forma_envio),
+    PRIMARY KEY (id_HCE, id_documento, id_forma_envio)
 );
 
 
