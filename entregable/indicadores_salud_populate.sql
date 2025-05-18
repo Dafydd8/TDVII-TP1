@@ -727,6 +727,28 @@ INSERT INTO EfectorDeSaludServicio (cod_refes, cod_servicio) VALUES (65, 5);
 INSERT INTO EfectorDeSaludServicio (cod_refes, cod_servicio) VALUES (65, 37);
 INSERT INTO EfectorDeSaludServicio (cod_refes, cod_servicio) VALUES (65, 16);
 
+--Llenar Problema
+TRUNCATE TABLE Problema RESTART IDENTITY CASCADE;
+INSERT INTO Problema (cod_refes, tipo, descripcion) VALUES
+(11, 'Infraestructura', 'Techo con filtraciones en sala de espera'),
+(21, 'Infraestructura', 'Baños en mal estado y sin agua caliente'),
+(3, 'Conectividad', 'Internet inestable en consultorios'),
+(14, 'FaltaDispositivos', 'Falta de termómetros digitales y oxímetros'),
+(9, 'Conectividad', 'No hay señal Wi-Fi en el sector de emergencias'),
+(6, 'Infraestructura', 'Paredes con humedad y pintura descascarada'),
+(17, 'FaltaDispositivos', 'Sin computadoras suficientes para personal médico'),
+(22, 'Conectividad', 'Servidor local caído con frecuencia'),
+(9, 'Infraestructura', 'Ventanas rotas en sala de espera'),
+(10, 'FaltaDispositivos', 'Falta de insumos médicos básicos'),
+(1, 'Infraestructura', 'Fallas eléctricas en quirófano'),
+(12, 'Conectividad', 'Sin acceso a historia clínica digital por caídas de red'),
+(13, 'FaltaDispositivos', 'Solo una impresora compartida entre cinco consultorios'),
+(5, 'Infraestructura', 'Ascensor fuera de servicio'),
+(16, 'Conectividad', 'Problemas con la conectividad de los monitores de signos vitales');
+
+
+
+
 TRUNCATE TABLE HCE RESTART IDENTITY CASCADE;
 INSERT INTO HCE (nombre, id_prov, tipo_gestion, tipo_desarrollo,gestion_estudios, generacion_receta_digital) VALUES ('HCE Parra', 1, 'Provincial', 'Licencia','Gestiona', 'No genera');
 INSERT INTO HCE (nombre, id_prov, tipo_gestion, tipo_desarrollo,gestion_estudios, generacion_receta_digital) VALUES ('HCE Rosselló', 1, 'Proveedor', 'Licencia','No gestiona', 'Genera');
