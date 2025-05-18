@@ -42,6 +42,14 @@ CREATE TABLE EfectorDeSaludServicio (
     PRIMARY KEY (cod_refes, cod_servicio)
 );
 
+CREATE TABLE Problema (
+    cod_problema SERIAL PRIMARY KEY,
+	cod_refes INT NOT NULL REFERENCES EfectorDeSalud(cod_refes),
+    tipo VARCHAR(30) CHECK (tipo IN ('Infraestructura', 'Conectividad', 'FaltaDispositivos')),
+    descripcion TEXT
+);
+
+
 CREATE TABLE HCE (
 	id_HCE SERIAL PRIMARY KEY,
 	nombre VARCHAR(100) NOT NULL,
